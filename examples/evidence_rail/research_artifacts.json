@@ -1,0 +1,35 @@
+[
+  {
+    "id": "lit-001",
+    "kind": "literature",
+    "producer": "literature-agent",
+    "created_at": "2026-10-01T00:00:00Z",
+    "url": "https://arxiv.org/",
+    "claim": "Context selection can affect long-horizon agent reliability.",
+    "confidence": 0.8
+  },
+  {
+    "id": "method-001",
+    "kind": "method",
+    "producer": "method-agent",
+    "created_at": "2026-10-01T00:00:00Z",
+    "summary": "Select evidence by provenance before constructing writer context.",
+    "parents": ["lit-001"]
+  },
+  {
+    "id": "result-001",
+    "kind": "result",
+    "producer": "experiment-agent",
+    "created_at": "2026-10-01T00:00:00Z",
+    "path": "outputs/experiments/result-001.csv",
+    "summary": "Placeholder result record. Replace only with a real generated CSV.",
+    "parents": ["method-001"]
+  },
+  {
+    "id": "invalid-citation",
+    "kind": "citation",
+    "producer": "writer-agent",
+    "created_at": "2026-10-01T00:00:00Z",
+    "claim": "This claim must be rejected because it has no source."
+  }
+]
