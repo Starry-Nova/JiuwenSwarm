@@ -26,6 +26,7 @@ from openjiuwen.agent_teams.harness.manifest import (
 )
 
 from jiuwenswarm.agents.harness.common.rails.avatar_rail import AvatarPromptRail
+from jiuwenswarm.agents.harness.common.rails.evidence_rail import EvidenceRail
 from jiuwenswarm.agents.harness.common.rails.multimodal_image_rail import (
     MultimodalImageRail,
 )
@@ -41,6 +42,7 @@ RESPONSE_PROMPT = "swarm.response_prompt"
 STREAM_EVENT = "swarm.stream_event"
 AVATAR_PROMPT = "swarm.avatar_prompt"
 MULTIMODAL_IMAGE = "swarm.multimodal_image"
+EVIDENCE = "swarm.evidence"
 
 
 class ResponsePromptInput(ConstructionInput):
@@ -76,6 +78,12 @@ harness_element(
 )
 harness_element(
     kind=ElementKind.RAIL,
+    name=EVIDENCE,
+    description="Builds a budgeted, traceable evidence ledger for research-agent hand-offs.",
+    builder=EvidenceRail,
+)
+harness_element(
+    kind=ElementKind.RAIL,
     name=AVATAR_PROMPT,
     description="Injects per-request digital-avatar prompt sections.",
     builder=AvatarPromptRail,
@@ -93,4 +101,5 @@ __all__ = [
     "STREAM_EVENT",
     "AVATAR_PROMPT",
     "MULTIMODAL_IMAGE",
+    "EVIDENCE",
 ]
